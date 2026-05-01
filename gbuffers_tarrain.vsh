@@ -12,11 +12,7 @@ uniform mat4 gbufferModelViewInverse;
 out vec2 texCoord; //short for texture cordinates
 void main() {
 
-    texCoord = vaUV0;
-    
-    vec3 worldSpaceVertexPosition = cameraPosition + gbufferModelViewInverse * modelViewMatrix * vec4(vaPosition +chunkOffset, 1)).xyz;
-    
-    float distanceToCamera = distance(worldspaceVertexPosition, cameraPosition);
-    
-    gl_Position = projectionMatrix *modelViewMatrix * vec4(vaPosition +chunkOffset, 1);//runs every fragment
+    texCoord = vaUV0;    
+
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(vaPosition +chunkOffset, 1);//runs every fragment
 }  
